@@ -1,6 +1,6 @@
 {
   "name": "@benbria/openapi-typescript-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate typescript types from an openapi document",
   "main": "dist/generator.js",
   "types": "dist/generator.d.ts",
