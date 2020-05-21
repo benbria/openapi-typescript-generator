@@ -1,5 +1,6 @@
 import log from 'fancy-log';
 import { promises as fs } from 'fs';
+import * as path from 'path';
 import { default as $RefParser } from 'json-schema-ref-parser';
 // TODO: json-schema-to-typescript has a pretty major bug that makes it mess up
 // a lot of types, but it gets simple schemas correct, so this is better than nothing.  :(
@@ -56,7 +57,7 @@ async function readPrettierConfig(prettierConfigFile: string) {
         return JSON.parse(contents);
     } catch (err) {
         try {
-            return await require(prettierConfigFile);
+            return await require(path.resolve(process.cwd(), prettierConfigFile));
         } catch (err) {
             log.warn(`Invalid prettier config file ${prettierConfigFile}: ${err}`);
             return undefined;
