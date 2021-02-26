@@ -31,5 +31,5 @@ jobs:
         if: success() && github.ref == 'refs/heads/master'
         run: npm run semantic-release
         env:
-          GH_TOKEN: ${{ secrets.DEPLOY_GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
